@@ -233,7 +233,7 @@ local Debug = {
     TRACE="TRACE"
 }
 function Debug:print(level, color, ...)
-    if not DEBUG_ADDON then
+    if not DEBUG then
         return
     end
     local msg = ""
