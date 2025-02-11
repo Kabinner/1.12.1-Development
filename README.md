@@ -18,7 +18,7 @@ This is a work in progress. Please submit an issue if something does not functio
     Displays errors in-game instead of silently failing.
 ```
 ## Debugging Hooks
-```
+```lua
 -- Save the original function
 local oldSendChatMessage = SendChatMessage  
 
@@ -31,7 +31,7 @@ end
 
 ### Tracing Function Execution
 If you need to know when and how often a function is being called:
-```
+```lua
 local function debugTrace(funcName)
     local oldFunc = _G[funcName]
     _G[funcName] = function(...)
@@ -44,7 +44,7 @@ debugTrace("CastSpellByName")
 debugTrace("TargetUnit")
 ```
 ## Inspecting Addon Variables
-```
+```lua
 function printTable(t, indent)
     indent = indent or ""
     for k, v in pairs(t) do
@@ -68,7 +68,7 @@ Add this to your .toc file:
 ## SavedVariables: DebugLog
 ```
 ### Use this script to store logs:
-```
+```lua
 DebugLog = DebugLog or {}
 
 function logDebugMessage(msg)
@@ -78,12 +78,12 @@ end
 logDebugMessage("Addon Loaded!")
 ```
 ### To review logs, reload the UI (/console reloadui) and inspect DebugLog:
-```
+```lua
     printTable(DebugLog)
 ```
 
 ## Manually Hooking a Function
-```
+```lua
 -- Save the original function
 local old_UseAction = UseAction
 
@@ -96,7 +96,7 @@ function UseAction(slot, checkCursor, onSelf)
 end
 ```
 ### Hooking a UI Function: Detecting When the Character Frame Opens
-```
+```lua
 -- Save the original function
 local old_ToggleCharacter = ToggleCharacter
 
@@ -109,7 +109,7 @@ function ToggleCharacter(frame)
 end
 ```
 ### Hooking Multiple Functions Dynamically
-```
+```lua
 -- List of functions we want to hook
 local functionsToHook = {
     "UseAction",
@@ -129,7 +129,7 @@ for _, funcName in ipairs(functionsToHook) do
 end
 ```
 ### Hook Protected Functions in Combat
-```
+```lua
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("UNIT_SPELLCAST_START")
 
@@ -140,7 +140,7 @@ frame:SetScript("OnEvent", function(self, event, unit, spell)
 end)
 ```
 ## Debugging Hooked Functions
-```
+```lua
 local function debugTrace(funcName)
     local oldFunc = _G[funcName]
     _G[funcName] = function(...)
@@ -155,7 +155,7 @@ debugTrace("UseAction")
 ```
 
 ## Debug.lua
-```
+```lua
 Debug:trace("Mapping ", self.name .. ":" .. function_name, "to: ", self.object[function_name])
 -> Ledger [TRACE]: Mapping Ledger:enable to: 1F8E5E08
 
@@ -163,7 +163,7 @@ Debug:log("Addon:dispatch: ", e, " -> ", self.name .. ":" .. self.object_map_loo
 -> Ledger [INFO]: Addon:dispatch: PLAYER_LOGIN -> Ledger:enable 1F8E5E08
 ```
 
-```
+```lua
 local DEBUG = true
 local DEBUG_NAME = 'Ledger'
 local Debug = {
