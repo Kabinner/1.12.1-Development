@@ -376,6 +376,7 @@ frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_LOGOUT")
 frame:SetScript("OnEvent", function()
     if event == "ADDON_LOADED" and arg1 == "MyAddon" then
+        -- make your frames here.
         this:UnregisterEvent("ADDON_LOADED")
     elseif event == "PLAYER_LOGIN" then
         DEFAULT_CHAT_FRAME:AddMessage("Welcome to Azeroth!")
