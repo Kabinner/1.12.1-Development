@@ -4,7 +4,6 @@ Documenting my experience.
 This is a work in progress.
 Please submit an issue if you want to add, or something does not function properly. 
 ```
-- [AI Chatbot prompt](#ai-chatbot-prompt)
 - [Addon template](#template)
 - [File isolation](#file-isolation)
 - [Enable Lua error messages](#enable-lua-error-messages)  
@@ -21,6 +20,7 @@ Please submit an issue if you want to add, or something does not function proper
 - - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 - [Debug.lua](#debuglua)
+- [AI Chatbot prompt](#ai-chatbot-prompt)
 - [Resources](#resources)
   
 ## Enable Lua error messages:
