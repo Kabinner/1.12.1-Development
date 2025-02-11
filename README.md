@@ -56,10 +56,9 @@ BottomLeft:SetTexture([[Interface\Spellbook\UI-SpellbookPanel-BotLeft]])
 function MyFunc(foo, bar, ...)
    -- foo = "foo"
    -- bar = "bar"
-   -- arg[1] == "foobar"
-   -- calling another function:
-   -- MyOtherFunc(unpack(arg))
-   -- table.getn(arg) == 1
+   -- arg[1] == "foobar"       
+   -- MyOtherFunc(unpack(arg)) # calling another function:
+   -- table.getn(arg) == 1     # length
 end
 
 MyTable = {
