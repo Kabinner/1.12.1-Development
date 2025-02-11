@@ -11,8 +11,6 @@ This is a work in progress. Please submit an issue if something does not functio
 - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 
-- [Debug.lua](#debuglua)
-  
 ## Enable Lua error messages:
 ```
 /console scriptErrors 1
@@ -155,51 +153,3 @@ debugTrace("TargetUnit")
 debugTrace("UseAction")
 ```
 
-## Debug.lua
-```
-Debug:trace("Mapping ", id(self.object[function_name]), " to: ", self.name .. ":" .. function_name .. "")
-Debug:info(texture, width, height, opts)
-```
-
-Debug.lua
-```
--- Debug.lua
-local DEBUG = true
-local Debug = {
-    LEVEL="INFO",
-    INFO="INFO",
-    TRACE="TRACE"
-}
-function Debug:print(color, ...)
-    if not DEBUG then
-        return
-    end
-    local msg = ""
-    for idx, value in ipairs(arg) do
-        if type(value) == "table" then
-            msg = msg .. tostring(value) .. " "
-        elseif type(value) == "function" then
-            msg = msg .. id(value) .. " "
-        elseif value == nil then
-            msg = msg .. "nil" .. " "
-        else
-            msg = msg .. value .. " "
-        end
-    end
-    print(color .. Addon.name .. " [DEBUG]: " .. msg)
-
-end
-function Debug:info(...)
-    if self.LEVEL ~= self.INFO then
-        return
-    end
-    self:print("|cffffd700", unpack(arg))
-end
-function Debug:trace(...)
-    if self.LEVEL ~= self.TRACE then
-        return
-    end
-    self:print("|cffffd700", unpack(arg))
-end
-
-```
