@@ -58,12 +58,14 @@ LedgerFrame:SetMovable(true)
 LedgerFrame:SetUserPlaced(true)
 
 LedgerFrame:RegisterForDrag("LeftButton")
-LedgerFrame:SetScript("OnDragStart", function()
-    LedgerFrame:StartMoving()
-end)
-LedgerFrame:SetScript("OnDragStop", function()
-    LedgerFrame:StopMovingOrSizing()
-end)
+
+-- Purely draggable.
+LedgerFrame:SetScript("OnDragStart", function() LedgerFrame:StartMoving() end)
+LedgerFrame:SetScript("OnDragStop", function() LedgerFrame:StopMovingOrSizing() end)
+
+-- While holding shift.
+LedgerFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then LedgerFrame:StartMoving() end end)
+LedgerFrame:SetScript("OnDragStop", function() LedgerFrame:StopMovingOrSizing() end)
 ```
 # Debugging
 ## Debugging Hooks
