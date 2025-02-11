@@ -182,6 +182,10 @@ Debug:log("Addon:dispatch: ", e, " -> ", self.name .. ":" .. self.object_map_loo
 ```
 
 ```lua
+local function id(_)
+    return string.sub(tostring(_), -8)
+end
+
 local DEBUG = true
 local DEBUG_NAME = 'Ledger'
 local Debug = {
