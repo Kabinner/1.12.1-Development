@@ -392,7 +392,7 @@ MyAddon/
 │-- MyAddon.toc    (Addon manifest file)
 │-- MyAddon.lua    (Main script file)
 │-- MyAddon.xml    (UI layout file, optional)
-│-- Readme.txt     (Documentation, optional)
+│-- Readme.md      (Documentation, optional)
 ```
 ### MyAddon.toc    (Addon manifest file)
 ```toc
