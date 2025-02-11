@@ -91,7 +91,7 @@ LedgerFrame:SetScript("OnDragStop", function() LedgerFrame:StopMovingOrSizing() 
 ```
 
 ## Minimap button
-``
+```lua
 MinimapButtonFrame = CreateFrame("Button", "BLINKER_UI_FRAME_MINIMAP_BUTTON", Minimap)
 MinimapButtonFrame:EnableMouse(true)
 MinimapButtonFrame:SetMovable(true)
@@ -118,7 +118,7 @@ MinimapButtonFrame:SetScript("OnClick", function(self)
   elseif arg1 == "RightButton" then
   end
 end)
-``
+```
 
 
 # Debugging
