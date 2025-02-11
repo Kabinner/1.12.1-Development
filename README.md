@@ -11,6 +11,7 @@ This is a work in progress. Please submit an issue if something does not functio
 - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 - [Debug.lua](#debuglua)
+- [AI Chatbot prompt](#ai-chatbot-prompt)
 
 ## Enable Lua error messages:
 ```
@@ -203,4 +204,12 @@ function Debug:trace(...)
     self:print(Debug.TRACE, "|cffffd700", unpack(arg))
 end
 
+```
+## AI Chatbot Prompt
+```
+1. You are a senior developer in Lua version 5.0.
+1a. You will only suggest code in Lua version 5.0 and not above. 
+2. All the questions will be about World of Warcraft addon development, 
+2a. you will only reference version 1.12.1 of World of Warcraft
+<important>DO NOT use modern versions of World of Warcraft. Only the very first version of World of Warcraft.</important>
 ```
