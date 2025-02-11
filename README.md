@@ -10,6 +10,7 @@ Please submit an issue if you want to add, or something does not function proper
 - [Strings](#strings)
 - [Function calls](#function-calls)
 - [Moveable Frames](#moveable-frames)
+- [Movable Minimap Button](#minimap-button)
 - [Making a basic window](#frame-window)
 - [Debugging](#debugging)
 - - [Debugging Hooks](#debugging-hooks)  
@@ -88,6 +89,38 @@ LedgerFrame:SetScript("OnDragStop", function() LedgerFrame:StopMovingOrSizing() 
 LedgerFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then LedgerFrame:StartMoving() end end)
 LedgerFrame:SetScript("OnDragStop", function() LedgerFrame:StopMovingOrSizing() end)
 ```
+
+## Minimap button
+``
+MinimapButtonFrame = CreateFrame("Button", "BLINKER_UI_FRAME_MINIMAP_BUTTON", Minimap)
+MinimapButtonFrame:EnableMouse(true)
+MinimapButtonFrame:SetMovable(true)
+MinimapButtonFrame:SetUserPlaced(true)
+MinimapButtonFrame:SetPoint("TOPLEFT", Minimap)
+
+MinimapButtonFrame:SetWidth(24)
+MinimapButtonFrame:SetHeight(24)
+MinimapButtonFrame:SetFrameStrata("MEDIUM")
+MinimapButtonFrame:RegisterForClicks("LeftButtonDown", "RightButtonDown");
+MinimapButtonFrame:SetNormalTexture([[Interface\Icons\Spell_Arcane_Blink]])
+MinimapButtonFrame:SetHighlightTexture([[Interface\Buttons\ButtonHilight-Square]])
+
+MinimapButtonFrame:RegisterForDrag("LeftButton")
+MinimapButtonFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then MinimapButtonFrame:StartMoving() end end)
+MinimapButtonFrame:SetScript("OnDragStop", function() MinimapButtonFrame:StopMovingOrSizing() end)
+MinimapButtonFrame:SetScript("OnEnter", function(self, event) 
+end)
+MinimapButtonFrame:SetScript("OnClick", function(self)
+  if IsShiftKeyDown() then
+    return nil
+  end
+  if arg1 == "LeftButton" then
+  elseif arg1 == "RightButton" then
+  end
+end)
+``
+
+
 # Debugging
 ## Debugging Hooks
 ```lua
