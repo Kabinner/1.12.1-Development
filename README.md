@@ -319,8 +319,6 @@ PageText:SetWidth(102)
 PageText:SetPoint("BOTTOM", LedgerFrame, "BOTTOM", -14, 96)
 PageText:SetText("Page 1")
 ```
-
-```
 ## AI Chatbot Prompt
 ```
 1. You are a senior developer in Lua version 5.0.
