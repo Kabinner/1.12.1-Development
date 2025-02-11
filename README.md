@@ -90,37 +90,6 @@ LedgerFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then LedgerF
 LedgerFrame:SetScript("OnDragStop", function() LedgerFrame:StopMovingOrSizing() end)
 ```
 
-## Minimap button
-```lua
-MinimapButtonFrame = CreateFrame("Button", "BLINKER_UI_FRAME_MINIMAP_BUTTON", Minimap)
-MinimapButtonFrame:EnableMouse(true)
-MinimapButtonFrame:SetMovable(true)
-MinimapButtonFrame:SetUserPlaced(true)
-MinimapButtonFrame:SetPoint("TOPLEFT", Minimap)
-
-MinimapButtonFrame:SetWidth(24)
-MinimapButtonFrame:SetHeight(24)
-MinimapButtonFrame:SetFrameStrata("MEDIUM")
-MinimapButtonFrame:RegisterForClicks("LeftButtonDown", "RightButtonDown");
-MinimapButtonFrame:SetNormalTexture([[Interface\Icons\Spell_Arcane_Blink]])
-MinimapButtonFrame:SetHighlightTexture([[Interface\Buttons\ButtonHilight-Square]])
-
-MinimapButtonFrame:RegisterForDrag("LeftButton")
-MinimapButtonFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then MinimapButtonFrame:StartMoving() end end)
-MinimapButtonFrame:SetScript("OnDragStop", function() MinimapButtonFrame:StopMovingOrSizing() end)
-MinimapButtonFrame:SetScript("OnEnter", function(self) 
-end)
-MinimapButtonFrame:SetScript("OnClick", function(self)
-  if IsShiftKeyDown() then
-    return nil
-  end
-  if arg1 == "LeftButton" then
-  elseif arg1 == "RightButton" then
-  end
-end)
-```
-
-
 # Debugging
 ## Debugging Hooks
 ```lua
@@ -315,6 +284,35 @@ function Debug:trace(...)
     end
     self:print(Debug.TRACE, "|cffffd700", unpack(arg))
 end
+```
+### Minimap button
+```lua
+MinimapButtonFrame = CreateFrame("Button", "BLINKER_UI_FRAME_MINIMAP_BUTTON", Minimap)
+MinimapButtonFrame:EnableMouse(true)
+MinimapButtonFrame:SetMovable(true)
+MinimapButtonFrame:SetUserPlaced(true)
+MinimapButtonFrame:SetPoint("TOPLEFT", Minimap)
+
+MinimapButtonFrame:SetWidth(24)
+MinimapButtonFrame:SetHeight(24)
+MinimapButtonFrame:SetFrameStrata("MEDIUM")
+MinimapButtonFrame:RegisterForClicks("LeftButtonDown", "RightButtonDown");
+MinimapButtonFrame:SetNormalTexture([[Interface\Icons\Spell_Arcane_Blink]])
+MinimapButtonFrame:SetHighlightTexture([[Interface\Buttons\ButtonHilight-Square]])
+
+MinimapButtonFrame:RegisterForDrag("LeftButton")
+MinimapButtonFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then MinimapButtonFrame:StartMoving() end end)
+MinimapButtonFrame:SetScript("OnDragStop", function() MinimapButtonFrame:StopMovingOrSizing() end)
+MinimapButtonFrame:SetScript("OnEnter", function(self) 
+end)
+MinimapButtonFrame:SetScript("OnClick", function(self)
+  if IsShiftKeyDown() then
+    return nil
+  end
+  if arg1 == "LeftButton" then
+  elseif arg1 == "RightButton" then
+  end
+end)
 ```
 
 ### Frame window
