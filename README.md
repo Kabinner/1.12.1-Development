@@ -3,16 +3,24 @@
 This is a work in progress. Please submit an issue if something does not function properly.
 ```
 - [File isolation](#file-isolation)
-- [Enable Lua error messages](#enable-lua-error-messages)  
-- [Debugging Hooks](#debugging-hooks)  
-- - [Tracing Function Execution](#tracing-function-execution)  
-- - [Manually Hooking a Function](#manually-hooking-a-function)  
-- - [Hooking Multiple Functions Dynamically](#hooking-multiple-functions-dynamically)  
-- - [Debugging Hooked Functions](#debugging-hooked-functions)  
-- [Inspecting Addon Variables](#inspecting-addon-variables)  
-- [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
-- [Debug.lua](#debuglua)
+- [Moveable Frames](#moveable-frames)
 - [AI Chatbot prompt](#ai-chatbot-prompt)
+- [Debugging](#debugging)
+- - [Enable Lua error messages](#enable-lua-error-messages)  
+- - [Debugging Hooks](#debugging-hooks)  
+- - - [Tracing Function Execution](#tracing-function-execution)  
+- - - [Manually Hooking a Function](#manually-hooking-a-function)  
+- - - [Hooking Multiple Functions Dynamically](#hooking-multiple-functions-dynamically)  
+- - - [Debugging Hooked Functions](#debugging-hooked-functions)  
+- - [Inspecting Addon Variables](#inspecting-addon-variables)  
+- - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
+- [Debug.lua](#debuglua)
+
+## Enable Lua error messages:
+```
+/console scriptErrors 1
+    Displays errors in-game instead of silently failing.
+```
 
 ## File isolation
 ```lua
@@ -25,11 +33,26 @@ _G = setmetatable({
 })
 setfenv(1, _G)
 ```
-## Enable Lua error messages:
+
+## Moveable Frames
 ```
-/console scriptErrors 1
-    Displays errors in-game instead of silently failing.
+Saves the position of the frame to layout_cache.txt on logout.
+Important! Frames should be created in the OnLoad event. or the position saving won't work.
 ```
+```lua
+    LedgerFrame:EnableMouse(true)
+    LedgerFrame:SetMovable(true)
+    LedgerFrame:SetUserPlaced(true)
+
+    LedgerFrame:RegisterForDrag("LeftButton")
+    LedgerFrame:SetScript("OnDragStart", function()
+        LedgerFrame:StartMoving()
+    end)
+    LedgerFrame:SetScript("OnDragStop", function()
+        LedgerFrame:StopMovingOrSizing()
+    end)
+```
+# Debugging
 ## Debugging Hooks
 ```lua
 -- Save the original function
