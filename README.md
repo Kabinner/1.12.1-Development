@@ -57,6 +57,7 @@ function MyFunc(foo, bar, ...)
    -- arg[1] == "foobar"
    -- calling another function:
    -- MyOtherFunc(unpack(arg))
+   -- table.getn(arg) == 1
 end
 
 MyTable = {
