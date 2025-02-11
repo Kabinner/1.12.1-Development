@@ -62,7 +62,7 @@ end
 MyTable = {
   foobar="foobar"
 }
-MyFunc("Foo", "Bar", unpack(myTable))
+MyFunc("Foo", "Bar", unpack(MyTable))
 ```
 
 
