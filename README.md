@@ -1,10 +1,10 @@
 # 1.12.1-Development
-### Enable Lua error messages:
+## Enable Lua error messages:
 ```
 /console scriptErrors 1
     Displays errors in-game instead of silently failing.
 ```
-### Debugging Hooks
+## Debugging Hooks
 ```
 -- Save the original function
 local oldSendChatMessage = SendChatMessage  
@@ -30,7 +30,7 @@ end
 debugTrace("CastSpellByName")
 debugTrace("TargetUnit")
 ```
-### Inspecting Addon Variables
+## Inspecting Addon Variables
 ```
 function printTable(t, indent)
     indent = indent or ""
@@ -49,12 +49,12 @@ end
 printTable(MyAddonData)
 ```
 
-### Logging and Persistent Debugging
+## Logging and Persistent Debugging
 Add this to your .toc file:
 ```
 ## SavedVariables: DebugLog
 ```
-## Use this script to store logs:
+### Use this script to store logs:
 ```
 DebugLog = DebugLog or {}
 
@@ -64,7 +64,7 @@ end
 
 logDebugMessage("Addon Loaded!")
 ```
-## To review logs, reload the UI (/console reloadui) and inspect DebugLog:
+### To review logs, reload the UI (/console reloadui) and inspect DebugLog:
 ```
     printTable(DebugLog)
 ```
@@ -126,7 +126,7 @@ frame:SetScript("OnEvent", function(self, event, unit, spell)
     end
 end)
 ```
-### Debugging Hooked Functions
+## Debugging Hooked Functions
 ```
 local function debugTrace(funcName)
     local oldFunc = _G[funcName]
