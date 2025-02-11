@@ -49,7 +49,7 @@ e.g:
 BottomLeft:SetTexture([[Interface\Spellbook\UI-SpellbookPanel-BotLeft]])
 ```
 ## Function calls
-### unpack
+### unpack, Variadic 
 ```lua
 function MyFunc(foo, bar, ...)
    -- foo = "foo"
