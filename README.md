@@ -149,7 +149,7 @@ end
 
 logDebugMessage("Addon Loaded!")
 ```
-### To review logs, reload the UI (/console reloadui) and inspect DebugLog:
+### To review logs, reload the UI (/reload) and inspect DebugLog:
 ```lua
     printTable(DebugLog)
 ```
