@@ -10,6 +10,7 @@ This is a work in progress. Please submit an issue if something does not functio
 - - [Debugging Hooked Functions](#debugging-hooked-functions)  
 - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
+- [Debug.lua](#debuglua)
 
 ## Enable Lua error messages:
 ```
@@ -153,3 +154,48 @@ debugTrace("TargetUnit")
 debugTrace("UseAction")
 ```
 
+## Debug.lua
+```
+Debug:trace("Mapping ", self.name .. ":" .. function_name, "to: ", self.object[function_name])
+-> Ledger [TRACE]: Mapping Ledger:enable to: 1F8E5E08
+
+Debug:log("Addon:dispatch: ", e, " -> ", self.name .. ":" .. self.object_map_lookup[id(func)], func)
+-> Ledger [INFO]: Addon:dispatch: PLAYER_LOGIN -> Ledger:enable 1F8E5E08
+```
+
+```
+local DEBUG = true
+local DEBUG_NAME = 'Ledger'
+local Debug = {
+    LEVEL="TRACE",
+    INFO="INFO",
+    TRACE="TRACE"
+}
+function Debug:print(level, color, ...)
+    if not DEBUG_ADDON then
+        return
+    end
+    local msg = ""
+    for idx, value in ipairs(arg) do
+        if type(value) == "table" or type(value) == "function" then
+            msg = msg .. id(value) .. " "
+        elseif value == nil then
+            msg = msg .. "nil" .. " "
+        else
+            msg = msg .. value .. " "
+        end
+    end
+    print(color .. DEBUG_NAME .. " [".. level .."]: " .. msg)
+
+end
+function Debug:log(...)
+    self:print(Debug.INFO, "|cffffd700", unpack(arg))
+end
+function Debug:trace(...)
+    if self.LEVEL ~= self.TRACE then
+        return
+    end
+    self:print(Debug.TRACE, "|cffffd700", unpack(arg))
+end
+
+```
