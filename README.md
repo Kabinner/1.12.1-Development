@@ -5,9 +5,9 @@ This is a work in progress.
 Please submit an issue if you want to add, or something does not function properly. 
 ```
 - [File isolation](#file-isolation)
-- [Making a basic window](#frame-window)
-- [Moveable Frames](#moveable-frames)
 - [Strings](#strings)
+- [Moveable Frames](#moveable-frames)
+- [Making a basic window](#frame-window)
 - [AI Chatbot prompt](#ai-chatbot-prompt)
 - [Debugging](#debugging)
 - - [Enable Lua error messages](#enable-lua-error-messages)  
