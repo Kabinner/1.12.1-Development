@@ -11,7 +11,7 @@ This is a work in progress. Please submit an issue if something does not functio
 - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 
-- [Debug.lua](#debug-lua)
+- [Debug.lua](#debuglua)
   
 ## Enable Lua error messages:
 ```
