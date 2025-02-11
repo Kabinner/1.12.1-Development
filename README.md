@@ -40,17 +40,17 @@ Saves the position of the frame to layout_cache.txt on logout.
 Important! Frames should be created in the OnLoad event. or the position saving won't work.
 ```
 ```lua
-    LedgerFrame:EnableMouse(true)
-    LedgerFrame:SetMovable(true)
-    LedgerFrame:SetUserPlaced(true)
+LedgerFrame:EnableMouse(true)
+LedgerFrame:SetMovable(true)
+LedgerFrame:SetUserPlaced(true)
 
-    LedgerFrame:RegisterForDrag("LeftButton")
-    LedgerFrame:SetScript("OnDragStart", function()
-        LedgerFrame:StartMoving()
-    end)
-    LedgerFrame:SetScript("OnDragStop", function()
-        LedgerFrame:StopMovingOrSizing()
-    end)
+LedgerFrame:RegisterForDrag("LeftButton")
+LedgerFrame:SetScript("OnDragStart", function()
+    LedgerFrame:StartMoving()
+end)
+LedgerFrame:SetScript("OnDragStop", function()
+    LedgerFrame:StopMovingOrSizing()
+end)
 ```
 # Debugging
 ## Debugging Hooks
