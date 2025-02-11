@@ -394,4 +394,10 @@ end)
 2. 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
 3. Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
 4. MPQ Editor v 4.0.0.937 (English, 32+64-bit) [http://zezula.net/en/mpq/download.html]
-5. Turtle WoW [https://turtle-wow.org/]
+5. Addons
+  * Improved Error Frame [https://legacy-wow.com/vanilla-addons/improved-error-frame/]
+  * pfStudio [https://shagu.org/pfStudio/]
+  * Prat [https://github.com/Qxcl/Prat-turtle]
+  * SuperMacro [https://github.com/Monteo/SuperMacro]
+6. Turtle WoW [https://turtle-wow.org/]
+  * wiki "For Addon Developers" [https://turtle-wow.fandom.com/wiki/Addons#For_Addon_Developers]
