@@ -389,4 +389,5 @@ end)
 1. Lua 5.0 [https://www.lua.org/manual/5.0/manual.html]
 2. 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
 3. Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
-4. Turtle WoW [https://turtle-wow.org/]
+4. MPQ Editor v 4.0.0.937 (English, 32+64-bit) [http://zezula.net/en/mpq/download.html]
+5. Turtle WoW [https://turtle-wow.org/]
