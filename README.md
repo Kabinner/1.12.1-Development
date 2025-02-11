@@ -6,6 +6,7 @@ Please submit an issue if you want to add, or something does not function proper
 ```
 - [File isolation](#file-isolation)
 - [Moveable Frames](#moveable-frames)
+- [Strings](#strings)
 - [AI Chatbot prompt](#ai-chatbot-prompt)
 - [Debugging](#debugging)
 - - [Enable Lua error messages](#enable-lua-error-messages)  
@@ -34,6 +35,16 @@ _G = setmetatable({
     __index = _G
 })
 setfenv(1, _G)
+```
+
+## Strings
+```lua
+[[Interface\Spellbook\UI-SpellbookPanel-BotLeft]]
+instead of
+"Interface\\Spellbook\\UI-SpellbookPanel-BotLeft"
+e.g:
+
+BottomLeft:SetTexture([[Interface\Spellbook\UI-SpellbookPanel-BotLeft]])
 ```
 
 ## Moveable Frames
