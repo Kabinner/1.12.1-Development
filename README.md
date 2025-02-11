@@ -401,3 +401,5 @@ end)
   * SuperMacro [https://github.com/Monteo/SuperMacro]
 6. Turtle WoW [https://turtle-wow.org/]
   * wiki "For Addon Developers" [https://turtle-wow.fandom.com/wiki/Addons#For_Addon_Developers]
+7. VisualStudio Community [https://visualstudio.microsoft.com/downloads/]
+  * Plugins: Lua, GitHub Repositories
