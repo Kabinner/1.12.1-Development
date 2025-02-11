@@ -4,6 +4,7 @@ Documenting my experience.
 This is a work in progress.
 Please submit an issue if you want to add, or something does not function properly. 
 ```
+- [AI Chatbot prompt](#ai-chatbot-prompt)
 - [Addon template](#template)
 - [File isolation](#file-isolation)
 - [Enable Lua error messages](#enable-lua-error-messages)  
@@ -11,7 +12,6 @@ Please submit an issue if you want to add, or something does not function proper
 - [Function calls](#function-calls)
 - [Moveable Frames](#moveable-frames)
 - [Making a basic window](#frame-window)
-- [AI Chatbot prompt](#ai-chatbot-prompt)
 - [Debugging](#debugging)
 - - [Debugging Hooks](#debugging-hooks)  
 - - - [Tracing Function Execution](#tracing-function-execution)  
