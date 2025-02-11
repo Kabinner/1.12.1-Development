@@ -258,6 +258,7 @@ function Debug:trace(...)
     end
     self:print(Debug.TRACE, "|cffffd700", unpack(arg))
 end
+```
 
 ### Frame window
 A Frame window that looks like the basic Spellbook Window.
