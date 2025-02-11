@@ -2,6 +2,7 @@
 ```
 This is a work in progress. Please submit an issue if something does not function properly.
 ```
+- [File isolation](#file-isolation)
 - [Enable Lua error messages](#enable-lua-error-messages)  
 - [Debugging Hooks](#debugging-hooks)  
 - - [Tracing Function Execution](#tracing-function-execution)  
@@ -13,6 +14,17 @@ This is a work in progress. Please submit an issue if something does not functio
 - [Debug.lua](#debuglua)
 - [AI Chatbot prompt](#ai-chatbot-prompt)
 
+## File isolation
+```lua
+-- Isolate this file.
+local _G = getfenv(0)
+_G = setmetatable({
+    _G = _G
+}, {
+    __index = _G
+})
+setfenv(1, _G)
+```
 ## Enable Lua error messages:
 ```
 /console scriptErrors 1
