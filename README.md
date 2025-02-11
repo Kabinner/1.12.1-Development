@@ -54,8 +54,8 @@ BottomLeft:SetTexture([[Interface\Spellbook\UI-SpellbookPanel-BotLeft]])
 ### unpack, Variadic 
 ```lua
 function MyFunc(foo, bar, ...)
-   -- foo = "foo"
-   -- bar = "bar"
+   -- foo = "Foo"
+   -- bar = "Bar"
    -- arg[1] == "foobar"       
    -- MyOtherFunc(unpack(arg)) # calling another function:
    -- table.getn(arg) == 1     # length
