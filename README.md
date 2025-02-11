@@ -108,7 +108,7 @@ MinimapButtonFrame:SetHighlightTexture([[Interface\Buttons\ButtonHilight-Square]
 MinimapButtonFrame:RegisterForDrag("LeftButton")
 MinimapButtonFrame:SetScript("OnDragStart", function() if IsShiftKeyDown() then MinimapButtonFrame:StartMoving() end end)
 MinimapButtonFrame:SetScript("OnDragStop", function() MinimapButtonFrame:StopMovingOrSizing() end)
-MinimapButtonFrame:SetScript("OnEnter", function(self, event) 
+MinimapButtonFrame:SetScript("OnEnter", function(self) 
 end)
 MinimapButtonFrame:SetScript("OnClick", function(self)
   if IsShiftKeyDown() then
