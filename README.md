@@ -6,6 +6,7 @@ Please submit an issue if you want to add, or something does not function proper
 ```
 - [File isolation](#file-isolation)
 - [Strings](#strings)
+- [Function calls](#function-calls)
 - [Moveable Frames](#moveable-frames)
 - [Making a basic window](#frame-window)
 - [AI Chatbot prompt](#ai-chatbot-prompt)
@@ -47,6 +48,23 @@ e.g:
 
 BottomLeft:SetTexture([[Interface\Spellbook\UI-SpellbookPanel-BotLeft]])
 ```
+## Function calls
+### unpack
+```lua
+function MyFunc(foo, bar, ...)
+   -- foo = "foo"
+   -- bar = "bar"
+   -- arg[1] == "foobar"
+   -- calling another function:
+   -- MyOtherFunc(unpack(arg))
+end
+
+MyTable = {
+  foobar="foobar"
+}
+MyFunc("Foo", "Bar", unpack(myTable))
+```
+
 
 ## Moveable Frames
 ```
