@@ -21,7 +21,7 @@ Please submit an issue if you want to add, or something does not function proper
 - - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 - [Debug.lua](#debuglua)
 - [AI Chatbot prompt](#ai-chatbot-prompt)
-- [Resources](#resources)
+- [Resources](#resources) API, Locate Interface files(icons, etc). etc
   
 ## Enable Lua error messages:
 ```
