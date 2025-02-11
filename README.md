@@ -245,6 +245,10 @@ local function id(_)
     return string.sub(tostring(_), -8)
 end
 
+local function print(msg)
+    DEFAULT_CHAT_FRAME:AddMessage(msg)
+end
+
 local DEBUG = true
 local DEBUG_NAME = 'Ledger'
 local Debug = {
