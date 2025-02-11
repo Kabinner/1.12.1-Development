@@ -63,7 +63,7 @@ function MyFunc(foo, bar, ...)
 end
 
 MyTable = {
-  foobar="foobar"
+  "foobar"
 }
 MyFunc("Foo", "Bar", unpack(MyTable))
 ```
