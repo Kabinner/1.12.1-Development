@@ -4,6 +4,7 @@ Documenting my experience.
 This is a work in progress.
 Please submit an issue if you want to add, or something does not function properly. 
 ```
+- [Addon template](#template)
 - [File isolation](#file-isolation)
 - [Strings](#strings)
 - [Function calls](#function-calls)
@@ -20,7 +21,6 @@ Please submit an issue if you want to add, or something does not function proper
 - - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 - [Debug.lua](#debuglua)
-- [Addon template](#template)
   
 ## Enable Lua error messages:
 ```
