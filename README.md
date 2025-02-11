@@ -164,6 +164,7 @@ Debug:trace("Mapping ", self.name .. ":" .. function_name, "to: ", self.object[f
 ```lua
 Debug:log("Addon:dispatch: ", e, " -> ", self.name .. ":" .. self.object_map_lookup[id(func)], func)
 ```
+```
 -> Ledger [INFO]: Addon:dispatch: PLAYER_LOGIN -> Ledger:enable 1F8E5E08
 ```
 
