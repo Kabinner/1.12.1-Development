@@ -1,26 +1,11 @@
 # 1.12.1-Development
-
-1. Essential Debugging Console Commands
+### Enable Lua error messages:
 ```
-These console variables (CVars) will help reveal errors and debugging information:
-
-    Enable Lua error messages:
-
 /console scriptErrors 1
-
     Displays errors in-game instead of silently failing.
-
-Reload UI without restarting the game:
-
-/console reloadui
-
-    Refreshes all active addons.
 ```
-Debugging Hooks
+### Debugging Hooks
 ```
-In 1.12.1, hooking functions allows you to intercept and modify behavior. You can track how the UI interacts with game functions.
-Hooking a Function for Debugging
-
 -- Save the original function
 local oldSendChatMessage = SendChatMessage  
 
@@ -31,8 +16,8 @@ SendChatMessage = function(msg, chatType, language, channel)
 end
 ```
 
-Tracing Function Execution
-If you need to know when and how often a function is being called, you can track it like this:
+### Tracing Function Execution
+If you need to know when and how often a function is being called:
 ```
 local function debugTrace(funcName)
     local oldFunc = _G[funcName]
@@ -45,9 +30,7 @@ end
 debugTrace("CastSpellByName")
 debugTrace("TargetUnit")
 ```
-Inspecting Addon Variables
-You can print addon variables and saved data in a readable format:
-
+### Inspecting Addon Variables
 ```
 function printTable(t, indent)
     indent = indent or ""
@@ -65,14 +48,13 @@ end
 -- Example usage:
 printTable(MyAddonData)
 ```
-Logging and Persistent Debugging
-You may want to log debugging messages persistently instead of printing them to chat. Use SavedVariables to store logs between sessions.
-Saving Debug Messages to a File
+
+### Logging and Persistent Debugging
 Add this to your .toc file:
 ```
 ## SavedVariables: DebugLog
 ```
-Use this script to store logs:
+## Use this script to store logs:
 ```
 DebugLog = DebugLog or {}
 
@@ -82,17 +64,12 @@ end
 
 logDebugMessage("Addon Loaded!")
 ```
-To review logs, reload the UI (/console reloadui) and inspect DebugLog:
+## To review logs, reload the UI (/console reloadui) and inspect DebugLog:
 ```
     printTable(DebugLog)
 ```
-You can track and modify everything on screen by hooking WorldFrame:
-```
-WorldFrame:HookScript("OnUpdate", function()
-    DEFAULT_CHAT_FRAME:AddMessage("Frame updated at: " .. GetTime())
-end)
-```
-Manually Hooking a Function
+
+## Manually Hooking a Function
 ```
 -- Save the original function
 local old_UseAction = UseAction
@@ -105,7 +82,7 @@ function UseAction(slot, checkCursor, onSelf)
     old_UseAction(slot, checkCursor, onSelf)
 end
 ```
-Hooking a UI Function: Detecting When the Character Frame Opens
+### Hooking a UI Function: Detecting When the Character Frame Opens
 ```
 -- Save the original function
 local old_ToggleCharacter = ToggleCharacter
@@ -118,7 +95,7 @@ function ToggleCharacter(frame)
     old_ToggleCharacter(frame)
 end
 ```
-Hooking Multiple Functions Dynamically
+### Hooking Multiple Functions Dynamically
 ```
 -- List of functions we want to hook
 local functionsToHook = {
@@ -138,7 +115,7 @@ for _, funcName in ipairs(functionsToHook) do
     end
 end
 ```
-Hook Protected Functions in Combat
+### Hook Protected Functions in Combat
 ```
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("UNIT_SPELLCAST_START")
@@ -149,7 +126,7 @@ frame:SetScript("OnEvent", function(self, event, unit, spell)
     end
 end)
 ```
-Debugging Hooked Functions
+### Debugging Hooked Functions
 ```
 local function debugTrace(funcName)
     local oldFunc = _G[funcName]
