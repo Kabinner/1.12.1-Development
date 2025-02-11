@@ -1,4 +1,14 @@
 # 1.12.1-Development
+
+- [Enable Lua error messages](#enable-lua-error-messages)  
+- [Debugging Hooks](#debugging-hooks)  
+- - [Tracing Function Execution](#tracing-function-execution)  
+- - [Manually Hooking a Function](#manually-hooking-a-function)  
+- - [Hooking Multiple Functions Dynamically](#hooking-multiple-functions-dynamically)  
+- - [Debugging Hooked Functions](#debugging-hooked-functions)  
+- [Inspecting Addon Variables](#inspecting-addon-variables)  
+- [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
+
 ## Enable Lua error messages:
 ```
 /console scriptErrors 1
