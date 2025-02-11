@@ -20,7 +20,8 @@ Please submit an issue if you want to add, or something does not function proper
 - - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 - [Debug.lua](#debuglua)
-
+- [Addon template](#template)
+  
 ## Enable Lua error messages:
 ```
 /console scriptErrors 1
@@ -346,3 +347,40 @@ PageText:SetText("Page 1")
 2a. you will only reference version 1.12.1 of World of Warcraft
 <important>DO NOT use modern versions of World of Warcraft. Only the very first version of World of Warcraft.</important>
 ```
+
+## Template
+### File Structure
+```
+MyAddon/
+│-- MyAddon.toc    (Addon manifest file)
+│-- MyAddon.lua    (Main script file)
+│-- MyAddon.xml    (UI layout file, optional)
+│-- Readme.txt     (Documentation, optional)
+```
+### MyAddon.toc    (Addon manifest file)
+```toc
+## Interface: 11200
+## Title: My Addon
+## Notes: This is a test addon
+## Author: YourName
+
+MyAddon.lua
+```
+
+### MyAddon.lua    (Main script file)
+```lua
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:RegisterEvent("PLAYER_LOGOUT")
+frame:SetScript("OnEvent", function()
+    if event == "ADDON_LOADED" and arg1 == "MyAddon" then
+        this:UnregisterEvent("ADDON_LOADED")
+    elseif event == "PLAYER_LOGIN" then
+        DEFAULT_CHAT_FRAME:AddMessage("Welcome to Azeroth!")
+    elseif event == "PLAYER_LOGOUT" then
+    end
+end)
+```
+
