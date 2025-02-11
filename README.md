@@ -259,7 +259,7 @@ function Debug:trace(...)
     self:print(Debug.TRACE, "|cffffd700", unpack(arg))
 end
 
-### Frame window, moveable.
+### Frame window
 A Frame window that looks like the basic Spellbook Window.
 ```lua
 local LedgerFrame = CreateFrame("Frame", "FRAME_LEDGER_PANEL", UIParent)
