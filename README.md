@@ -1,6 +1,8 @@
 # 1.12.1-Development
+Documenting my experience.
 ```
-This is a work in progress. Please submit an issue if something does not function properly.
+This is a work in progress.
+Please submit an issue if you want to add, or something does not function properly. 
 ```
 - [File isolation](#file-isolation)
 - [Moveable Frames](#moveable-frames)
