@@ -21,6 +21,7 @@ Please submit an issue if you want to add, or something does not function proper
 - - [Inspecting Addon Variables](#inspecting-addon-variables)  
 - - [Logging and Persistent Debugging](#logging-and-persistent-debugging)  
 - [Debug.lua](#debuglua)
+- [Resources](#resources)
   
 ## Enable Lua error messages:
 ```
@@ -385,3 +386,8 @@ frame:SetScript("OnEvent", function()
 end)
 ```
 
+## Resources
+1. Lua 5.0 [https://www.lua.org/manual/5.0/manual.html]
+2. 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
+3. Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
+4. Turtle WoW [https://turtle-wow.org/]
