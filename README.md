@@ -390,16 +390,16 @@ end)
 ```
 
 ## Resources
-1. Lua 5.0 [https://www.lua.org/manual/5.0/manual.html]
-2. 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
-3. Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
-4. MPQ Editor v 4.0.0.937 (English, 32+64-bit) [http://zezula.net/en/mpq/download.html]
-5. Addons
-  * Improved Error Frame [https://legacy-wow.com/vanilla-addons/improved-error-frame/]
-  * pfStudio [https://shagu.org/pfStudio/]
-  * Prat [https://github.com/Qxcl/Prat-turtle]
-  * SuperMacro [https://github.com/Monteo/SuperMacro]
-6. Turtle WoW [https://turtle-wow.org/]
-  * wiki "For Addon Developers" [https://turtle-wow.fandom.com/wiki/Addons#For_Addon_Developers]
-7. VisualStudio Community [https://visualstudio.microsoft.com/downloads/]
-  * Plugins: Lua, GitHub Repositories
+- Lua 5.0 [https://www.lua.org/manual/5.0/manual.html]
+- 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
+- Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
+- MPQ Editor v 4.0.0.937 (English, 32+64-bit) [http://zezula.net/en/mpq/download.html]
+- Addons
+- - Improved Error Frame [https://legacy-wow.com/vanilla-addons/improved-error-frame/]
+- - pfStudio [https://shagu.org/pfStudio/]
+- - Prat [https://github.com/Qxcl/Prat-turtle]
+- - SuperMacro [https://github.com/Monteo/SuperMacro]
+- Turtle WoW [https://turtle-wow.org/]
+- - wiki "For Addon Developers" [https://turtle-wow.fandom.com/wiki/Addons#For_Addon_Developers]
+- VisualStudio Community [https://visualstudio.microsoft.com/downloads/]
+- - Plugins: Lua, GitHub Repositories
