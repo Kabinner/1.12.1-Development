@@ -310,7 +310,7 @@ function Debug:print(_, level, color, ...)
     end
     
     if type(_) == "table" and _.name then 
-        msg =  color .. "[".. level .."]: Loader[" .. id(_) .."]:"
+        msg =  color .. "[".. level .."] Loader[" .. id(_) .."]:"
     end
     print(msg, unpack(arg))
 
