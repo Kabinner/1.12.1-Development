@@ -246,46 +246,90 @@ Debug:log("Addon:dispatch: ", e, " -> ", self.name .. ":" .. self.object_map_loo
 local function id(_)
     return string.sub(tostring(_), -8)
 end
-
-local function print(msg)
-    DEFAULT_CHAT_FRAME:AddMessage(msg)
+local function len(_)
+    if type(_) == "table" and _["n"] then
+        return table.getn(_)
+    end
 end
 
-local DEBUG = true
-local DEBUG_NAME = 'Ledger'
+local string = setmetatable(string, {})
+function string.unpack(_)
+    if not table.getn(_) then
+        return
+    end
+    args = {}
+    for idx, value in ipairs(_) do
+        args[idx] = value .. " "
+    end  
+    return unpack(args)
+end    
+
+local function print(_, ...)
+    local msg = ""
+
+    if type(_) == "table" then
+        if _.name then
+            msg = _.name .. ": "
+        else
+            msg = id(_)
+        end
+    elseif type(_) == "string" then
+        msg = _
+    end
+
+    for idx, value in ipairs(arg) do
+        if type(value) == "table" or type(value) == "function" then
+            msg = msg .. id(value)
+        elseif type(value) == "boolean" or type(value) == "number" then
+            msg = msg .. tostring(value)
+        elseif value == nil then
+            msg = msg .. "nil"
+        else
+            if msg == "__UNPACK" then
+                DEFAULT_CHAT_FRAME:AddMessage("testing");
+
+            end
+            msg = msg .. value
+        end
+    end
+
+    DEFAULT_CHAT_FRAME:AddMessage(msg);
+end
+
+
+-- Debug
 local Debug = {
     LEVEL="TRACE",
     INFO="INFO",
-    TRACE="TRACE"
+    TRACE="TRACE",
 }
-function Debug:print(level, color, ...)
-    if not DEBUG then
+function Debug:print(_, level, color, ...)
+    if type(_) == "table" and not _.debug then
         return
     end
+
     local msg = ""
-    for idx, value in ipairs(arg) do
-        if type(value) == "table" or type(value) == "function" then
-            msg = msg .. id(value) .. " "
-        elseif type(value) == "boolean" then
-            msg = msg .. tostring(value) .. " "
-        elseif value == nil then
-            msg = msg .. "nil" .. " "
-        else
-            msg = msg .. value .. " "
-        end
+    if type(_) == "string" then
+        msg = _
     end
-    print(color .. DEBUG_NAME .. " [".. level .."]: " .. msg)
+    
+    if type(_) == "table" and _.name then 
+        msg =  color .. "[".. level .."]: Loader[" .. id(_) .."]:"
+    end
+    print(msg, unpack(arg))
 
 end
-function Debug:log(...)
-    self:print(Debug.INFO, "|cffffd700", unpack(arg))
+function Debug:log(caller, ...)
+    self:print(caller, Debug.INFO, "|cffffd700", unpack(arg))
 end
-function Debug:trace(...)
-    if self.LEVEL ~= self.TRACE then
+function Debug:trace(caller, ...)
+    if not caller or caller.LEVEL ~= self.TRACE then
         return
     end
-    self:print(Debug.TRACE, "|cffffd700", unpack(arg))
+    self:print(caller, Debug.TRACE, "|cffffd700", unpack(arg))
 end
+
+
 ```
 ### Minimap button
 ```lua
