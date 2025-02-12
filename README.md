@@ -236,7 +236,7 @@ Debug:trace(self, "map: ", self.object.name, "[", id(self.object), "] ", functio
 -> [TRACE]:Loader[20A4E4C8]:map: Ledger[20A4E668]:enable = 1F8E5E08
 ```
 ```lua
-Debug:trace(self, "dispatch ", e, " -> ", self.name .. ":" .. self.object_map_lookup[id(func)], "[", func, "]")
+Debug:trace(self, "dispatch ", e, " -> ", self.name, ":", self.object_map_lookup[id(func)], "[", func, "]")
 ```
 ```
 -> [TRACE]:Loader[20A4E4C8]:dispatch: PLAYER_LOGIN -> Ledger:enable[1F8E5E08]
