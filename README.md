@@ -266,6 +266,8 @@ function Debug:print(level, color, ...)
     for idx, value in ipairs(arg) do
         if type(value) == "table" or type(value) == "function" then
             msg = msg .. id(value) .. " "
+        elseif type(value) == "boolean" then
+            msg = msg .. tostring(value) .. " "
         elseif value == nil then
             msg = msg .. "nil" .. " "
         else
