@@ -230,16 +230,16 @@ debugTrace("UseAction")
 
 ## Debug.lua
 ```lua
-Debug:trace("Mapping ", self.name .. ":" .. function_name, "to: ", self.object[function_name])
+Debug:trace(self, "map: ", self.object.name, "[", id(self.object), "] ", function_name, " = ", callback)
 ```
 ```
--> Ledger [TRACE]: Mapping Ledger:enable to: 1F8E5E08
+-> [TRACE]:Loader[20A4E4C8]:map: Ledger[20A4E668]:enable = 1F8E5E08
 ```
 ```lua
-Debug:log("Addon:dispatch: ", e, " -> ", self.name .. ":" .. self.object_map_lookup[id(func)], func)
+Debug:trace(self, "dispatch ", e, " -> ", self.name .. ":" .. self.object_map_lookup[id(func)], "[", func, "]")
 ```
 ```
--> Ledger [INFO]: Addon:dispatch: PLAYER_LOGIN -> Ledger:enable 1F8E5E08
+-> [TRACE]:Loader[20A4E4C8]:dispatch: PLAYER_LOGIN -> Ledger:enable[1F8E5E08]
 ```
 
 ```lua
