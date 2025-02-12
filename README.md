@@ -285,10 +285,6 @@ local function print(_, ...)
         elseif value == nil then
             msg = msg .. "nil"
         else
-            if msg == "__UNPACK" then
-                DEFAULT_CHAT_FRAME:AddMessage("testing");
-
-            end
             msg = msg .. value
         end
     end
