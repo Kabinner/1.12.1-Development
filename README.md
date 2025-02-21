@@ -9,6 +9,7 @@ Please submit an issue if you want to add, or something does not function proper
 - [Enable Lua error messages](#enable-lua-error-messages)  
 - [Strings](#strings)
 - [Function calls](#function-calls)
+- [UIDropDownMenu](#uidropdownmenu)
 - [Moveable Frames](#moveable-frames)
 - [Movable Minimap Button](#minimap-button)
 - [Making a basic window](#frame-window)
@@ -67,6 +68,20 @@ MyTable = {
 }
 MyFunc("Foo", "Bar", unpack(MyTable))
 ```
+
+### UIDropDownMenu
+| Function | Description | Example |
+|----------|------------|---------|
+| **`UIDropDownMenu_Initialize(frame, initFunction)`** | Initializes the dropdown menu and calls `initFunction` to populate it with options. | `UIDropDownMenu_Initialize(MyDropDown, Initialize)` |
+| **`UIDropDownMenu_AddButton(info, level)`** | Adds a button (option) to the dropdown menu. The `info` table should define properties like `text`, `func`, and `value`. | `UIDropDownMenu_AddButton({ text = "Option 1", func = MyFunction })` |
+| **`UIDropDownMenu_SetWidth(width, frame)`** | Sets the width of the dropdown menu. | `UIDropDownMenu_SetWidth(150, MyDropDown)` |
+| **`UIDropDownMenu_SetText(text, frame)`** | Sets the label (text) displayed on the dropdown button. | `UIDropDownMenu_SetText("Choose an option", MyDropDown)` |
+| **`UIDropDownMenu_SetSelectedID(frame, id)`** | Sets the selected option by index (starting from 1). | `UIDropDownMenu_SetSelectedID(MyDropDown, 2)` |
+| **`UIDropDownMenu_SetSelectedValue(frame, value)`** | Sets the selected option by its assigned `value`. | `UIDropDownMenu_SetSelectedValue(MyDropDown, "option2")` |
+| **`UIDropDownMenu_SetSelectedName(frame, name)`** | Sets the selected option by its displayed `text`. | `UIDropDownMenu_SetSelectedName(MyDropDown, "Option 2")` |
+| **`UIDropDownMenu_GetSelectedID(frame)`** | Returns the index of the currently selected option. | `local id = UIDropDownMenu_GetSelectedID(MyDropDown)` |
+| **`UIDropDownMenu_GetSelectedValue(frame)`** | Returns the `value` of the currently selected option. | `local value = UIDropDownMenu_GetSelectedValue(MyDropDown)` |
+| **`UIDropDownMenu_GetSelectedName(frame)`** | Returns the `text` of the currently selected option. | `local name = UIDropDownMenu_GetSelectedName(MyDropDown)` |
 
 
 ## Moveable Frames
