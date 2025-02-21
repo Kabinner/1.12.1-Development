@@ -1,4 +1,4 @@
-[WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf](https://github.com/user-attachments/files/18904511/WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf)# 1.12.1-Development
+# 1.12.1-Development
 Documenting my experience.
 ```
 This is a work in progress.
