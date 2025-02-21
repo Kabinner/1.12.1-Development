@@ -1,4 +1,4 @@
-# 1.12.1-Development
+[WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf](https://github.com/user-attachments/files/18904511/WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf)# 1.12.1-Development
 Documenting my experience.
 ```
 This is a work in progress.
@@ -477,7 +477,9 @@ frame:SetScript("OnEvent", function()
 end)
 ```
 
+
 ## Resources
+- [WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf](https://github.com/user-attachments/files/18904513/WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf)
 - Lua 5.0 [https://www.lua.org/manual/5.0/manual.html]
 - 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
 - Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
