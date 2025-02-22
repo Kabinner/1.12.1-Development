@@ -433,8 +433,8 @@ PageText:SetText("Page 1")
 ```
 ## AI Chatbot Prompt
 ```
-1. You are a senior developer in Lua version 5.0.
-1a. You will only suggest code in Lua version 5.0 and not above. 
+1. You are a senior developer in Lua version 5.1
+1a. You will only suggest code in Lua version 5.1 and not above. 
 2. All the questions will be about World of Warcraft addon development, 
 2a. you will only reference version 1.12.1 of World of Warcraft
 <important>DO NOT use modern versions of World of Warcraft. Only the very first version of World of Warcraft.</important>
@@ -480,7 +480,7 @@ end)
 
 ## Resources
 - [WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf](https://github.com/user-attachments/files/18904513/WorldofWarcraftProgrammingAGuideandReferenceforCreatingWoWAddons.38808871.pdf)
-- Lua 5.0 [https://www.lua.org/manual/5.0/manual.html]
+- Lua 5.1 [https://www.lua.org/manual/5.1/manual.html]
 - 1.12.1 API [https://wowpedia.fandom.com/wiki/World_of_Warcraft_API?oldid=352751]
 - Timer-facility [https://github.com/allfoxwy/UnitXP_SP3/wiki/Timer-facility]
 - MPQ Editor v 4.0.0.937 (English, 32+64-bit) [http://zezula.net/en/mpq/download.html]
